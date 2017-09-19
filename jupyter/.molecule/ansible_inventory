@@ -1,0 +1,5 @@
+[all]
+jupyter ansible_connection=docker
+
+[group1]
+jupyter

@@ -20,5 +20,6 @@ jobs:
     - stage: Jupyter tests
       script: echo one
       script: echo two
-      script: cd jupyter/
-      script: molecule test
+      script: cd jupyter/ && molecule test
+    - stage: Jupyter tests again
+      script: cd jupyter/ && molecule test

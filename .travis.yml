@@ -13,7 +13,7 @@ before_install:
 install:
   - pip install docker
   - pip install molecule==1.25
-  - pip install --upgrade docker ansible=2.3 testinfra ansible-lint
+  - pip install --upgrade docker ansible==2.3 testinfra ansible-lint
 
 
 before_script:

@@ -11,7 +11,6 @@ before_install:
   - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-ce
 
 install:
-  - sudo apt-get install gcc python-pip python-vagrant libssl-dev libffi-dev
   - pip install docker
   - pip install molecule==1.25
   - pip install --upgrade docker ansible=2.3 testinfra ansible-lint

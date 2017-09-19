@@ -17,11 +17,8 @@ install:
 
 jobs:
   include:
-    - stage: unit tests
+    - stage: Jupyter tests
       script: echo one
-    - stage: unit tests
       script: echo two
-    - stage: Enter jupyter
       script: cd jupyter/
-    - stage: test jupyter
       script: molecule test

@@ -18,8 +18,5 @@ install:
 jobs:
   include:
     - stage: Jupyter tests
-      script: echo one
-      script: echo two
-      script: cd jupyter/ && molecule test
-    - stage: Jupyter tests again
-      script: cd jupyter/ && molecule test
+      before_script: cd jupyter/
+      script: molecule test

@@ -15,5 +15,13 @@ install:
   - pip install molecule==1.4
   - pip install --upgrade docker ansible testinfra ansible-lint
 
-stage: jupyter
-script: cd jupyter; molecule test; cd ..;
+jobs:
+  include:
+    - stage: unit tests
+      script: echo one
+    - stage: unit tests
+      script: echo two
+    - stage: Enter jupyter
+      script: cd jupyter/
+    - stage: test jupyter
+      script: molecule test

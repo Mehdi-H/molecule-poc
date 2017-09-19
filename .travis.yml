@@ -12,11 +12,8 @@ before_install:
 
 install:
   - pip install docker-py
-  - pip install molecule==1.25
-  - pip install --upgrade docker ansible testinfra
+  - pip install molecule==1.4
+  - pip install --upgrade docker ansible testinfra ansible-lint
 
-before_script:
-  - cd jupyter
-
-script:
-  - molecule test
+stage: jupyter
+script: cd jupyter; molecule test; cd ..;

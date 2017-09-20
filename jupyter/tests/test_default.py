@@ -35,6 +35,11 @@ class TestJupyterDistribution(unittest.TestCase):
             self.jupyter.get("host").package("python-pip").is_installed
         )
 
+    def test_necessary_pip_packages_are_present(self):
+        self.assertTrue(
+            "jupyter" in self.jupyter.get("host").pip_package.get_packages()
+        )
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,2 +1,7 @@
 ---
 # tasks file for jupyter
+
+- name: Install pip on the system
+  package:
+    name: python-pip
+    state: present

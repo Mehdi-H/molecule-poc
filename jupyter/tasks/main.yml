@@ -1,17 +1,8 @@
 ---
 # tasks file for jupyter
 
-- name: Install pip on the system
-  package:
-    name: python-pip
-    state: present
+- name: Preparing env. for jupyter
+  include: jupyter_distribution.yml
 
-# The following is necessary to install jupyter
-- name: Upgrade pip to the lastest version
-  pip:
-    name: pip
-    extra_args: --upgrade
-
-- name: Install Jupyter dependency to run a notebook
-  pip:
-    name: jupyter
+- name: Getting the titanic dataset
+  include: titanic.yml

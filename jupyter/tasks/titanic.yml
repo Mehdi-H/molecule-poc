@@ -1,0 +1,8 @@
+---
+# tasks relative to the titanic dataset
+
+- name: Download the titanic dataset archive
+  get_url:
+    url: "https://cran.r-project.org/src/contrib/titanic_0.1.0.tar.gz"
+    dest: "~/titanic_0.1.0.tar.gz"
+    mode: "a+rx"

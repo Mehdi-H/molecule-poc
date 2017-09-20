@@ -1,6 +1,5 @@
 import testinfra
 import unittest
-import testinfra.host
 
 
 class TestJupyterDistribution(unittest.TestCase):

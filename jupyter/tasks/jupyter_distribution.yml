@@ -1,0 +1,25 @@
+---
+# task file for jupyter distribution setting
+
+- name: Check to see if pip is already installed.
+  command: "pip --version"
+  ignore_errors: true
+  changed_when: false  # read-only task, idempotent is intact
+  check_mode: no
+  register: pip_is_installed
+
+- name: Install pip on the system
+  package:
+    name: python-pip
+    state: present
+  when: pip_is_installed.rc != 0
+
+# The following is necessary to install jupyter
+- name: Upgrade pip to the latest version
+  pip:
+    name: pip
+    extra_args: --upgrade
+
+- name: Install Jupyter dependency to run a notebook
+  pip:
+    name: jupyter
